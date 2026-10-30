@@ -1,3 +1,4 @@
 pytest
 pytest-cov
 requests
+Flask-SQLAlchemy==3.1.1
