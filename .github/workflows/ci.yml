@@ -20,3 +20,9 @@ jobs:
       - name: Build docker image
         run: | 
           docker build -t polls-api:latest .
+      
+      - name: Run docker image
+        run: |
+          docker run -d --name polls-api -p 5001:5001 polls-api:latest
+          sleep 5
+          curl http://localhost:5001/api/health
