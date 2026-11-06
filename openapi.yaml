@@ -12,7 +12,7 @@ info:
 servers:
   - url: http://127.0.0.1:5001
     description: Local development server
-  - url: https://example.com
+  - url: https://polls-api-655l.onrender.com
     description: Production server
 
 tags:
@@ -83,8 +83,12 @@ paths:
                   status:
                     type: string
                     example: healthy
+                  message:
+                    type: string
+                    example: Congratulations!! You have complete the Dev2Prod Course
               example:
                 status: healthy
+                message: Congratulations!! You have complete the Dev2Prod Course
   
   /api/auth/register:
     post:

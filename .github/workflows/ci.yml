@@ -1,4 +1,4 @@
-name: CI
+name: CI_CD
 
 on: 
   push:
@@ -62,3 +62,9 @@ jobs:
         run: | 
           docker push ${{secrets.DOCKER_USERNAME}}/polls-api:latest
           docker push ${{secrets.DOCKER_USERNAME}}/polls-api:${{ github.sha }}
+      
+      - name: Trigger render deployment
+        run: |
+          curl -X ${{secrets.RENDER_DEPLOY_HOOK}}
+      
+      
